@@ -1,0 +1,166 @@
+@import "bourbon";
+@import "neat";
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+// gray
+$primary1: #302E36;
+$secondary1: #29282E;
+
+// teal
+$primary2: #00BFC2;
+$secondary2: #056874;
+
+// red
+$primary3: #E50909;
+$secondary3: #C20909;
+
+
+// full layout
+.main-wrapper{
+  .main-heading{
+    @include span-columns(3);
+  }
+  .main-content{
+    @include span-columns(9);
+    @include shift(3);
+  }
+}
+
+
+// Media 800px
+.main-wrapper{
+  $mobile: new-breakpoint(max-width 800px 3);
+
+  .main-heading{
+    @include media($mobile) {
+      @include span-columns(3);
+      position:relative;
+      border-right:none;
+      border-bottom: 3px solid $secondary3;
+      text-align:left;
+    }
+  }
+
+  .main-content{
+    @include media($mobile) {
+      @include span-columns(3);
+      @include shift(0);
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+  background: url("/images/bg.png");
+  font-family: 'Roboto', sans-serif;
+}
+.main-content{
+  //font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.entry{
+  padding:0 0 2.5em 0;
+ }
+
+.entry-heading{
+  overflow:auto;
+  margin-bottom:1em;
+}
+
+.blog .entry-heading h2{
+  margin:0;
+  padding:0;
+  float:left;
+  font-size:1.6em;
+  margin-left: .5em;
+}
+
+.date{
+  font-size:.8em;
+  float:left;
+  padding:.2em;
+  text-align: center;
+  width:3em;
+  background-color: $primary2;
+  color: $primary1;
+  span{ padding: .1em; }
+  .month, .day, .year{}
+  .day{
+    font-size:1.5em;
+    color:white;
+  }
+}
+
+.main-wrapper a {
+  color: $primary2;
+}
+
+.main-wrapper a:hover {
+  color: $secondary2;
+}
+
+.main-heading{
+  @include radial-gradient($secondary1, $primary1);
+  box-shadow: 0 0 3px 2px hsla(0, 0%, 0%, 0.35);
+
+  border-right: 3px solid $secondary3;
+  text-align:right; padding: 1em; position:fixed; top:0;   bottom:0;
+
+  p a { padding:0.25em;}
+  p i { padding-right: 0.1em;}
+
+  h1.brand{
+    color:white;
+    padding-bottom:0;
+    margin-bottom:0;
+    font-size: 2.4em;
+  }
+  p.brand_subtag {
+    padding:0; margin:0;
+    color:gray;
+    font-size: 0.8em;
+  }
+}
+
+.sign-in{
+  position:absolute;
+  bottom: 2em;
+  right: 2em;
+}
+.photo,.date{
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
+}
+
+.shadow{
+
+  box-shadow: 0 0 3px 2px hsla(0, 0%, 0%, 0.35);
+  //@include box-shadow(0 0 3px 2px hsla(0, 0%, 0%, 0.35));
+}
+
+.main-content{
+  padding: 1em;
+}
+
+
+
