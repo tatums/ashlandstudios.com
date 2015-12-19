@@ -1,0 +1,35 @@
+// full layout
+.main-wrapper{
+  .main-heading{
+    @include span-columns(3);
+  }
+  .main-content{
+    @include span-columns(9);
+    @include shift(3);
+  }
+}
+
+
+// Media 800px
+.main-wrapper{
+  $mobile: new-breakpoint(max-width 800px 3);
+
+  .main-heading{
+    @include media($mobile) {
+      @include span-columns(3);
+      position:relative;
+      border-right:none;
+      border-bottom: 3px solid $secondary3;
+      text-align:left;
+    }
+  }
+
+  .main-content{
+    @include media($mobile) {
+      @include span-columns(3);
+      @include shift(0);
+    }
+  }
+
+}
+

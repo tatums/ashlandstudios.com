@@ -1,75 +1,9 @@
-@import "bourbon";
-@import "neat";
-@import url(https://fonts.googleapis.com/css?family=Roboto);
-
-// gray
-$primary1: #302E36;
-$secondary1: #29282E;
-
-// teal
-$primary2: #00BFC2;
-$secondary2: #056874;
-
-// red
-$primary3: #E50909;
-$secondary3: #C20909;
-
-
-// full layout
-.main-wrapper{
-  .main-heading{
-    @include span-columns(3);
-  }
-  .main-content{
-    @include span-columns(9);
-    @include shift(3);
-  }
-}
-
-
-// Media 800px
-.main-wrapper{
-  $mobile: new-breakpoint(max-width 800px 3);
-
-  .main-heading{
-    @include media($mobile) {
-      @include span-columns(3);
-      position:relative;
-      border-right:none;
-      border-bottom: 3px solid $secondary3;
-      text-align:left;
-    }
-  }
-
-  .main-content{
-    @include media($mobile) {
-      @include span-columns(3);
-      @include shift(0);
-    }
-  }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 body{
   background: url("/images/bg.png");
-  font-family: 'Roboto', sans-serif;
+  //font-family: 'Roboto', sans-serif;
 }
 .main-content{
-  //font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+  font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
   letter-spacing: .01rem;
   font-weight: 400;
   font-style: normal;
@@ -153,14 +87,10 @@ body{
 }
 
 .shadow{
-
   box-shadow: 0 0 3px 2px hsla(0, 0%, 0%, 0.35);
-  //@include box-shadow(0 0 3px 2px hsla(0, 0%, 0%, 0.35));
 }
 
 .main-content{
   padding: 1em;
 }
-
-
 
