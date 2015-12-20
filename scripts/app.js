@@ -24,6 +24,7 @@ xhttp.open("GET", "http://www.tatum.im/atom.xml", true);
 xhttp.send();
 
 
+var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" ];
 
 function go (items) {
 
@@ -42,8 +43,29 @@ function go (items) {
       h2.setAttribute('class', 'entry-heading');
       h2.innerHTML =  item.getElementsByTagName("title")[0].childNodes[0].nodeValue;
 
-      heading.appendChild(h2);
+      var date = document.createElement('div')
+      date.setAttribute('class', 'date');
 
+      var d = new Date(window.item.getElementsByTagName("updated")[0].childNodes[0].nodeValue);
+
+      var dateMonth = document.createElement('div')
+      dateMonth.setAttribute('class', 'month');
+      dateMonth.innerHTML = monthNames[d.getMonth()];
+
+      var dateDay = document.createElement('div')
+      dateDay.setAttribute('class', 'day');
+      dateDay.innerHTML = d.getDate();
+
+      var dateYear = document.createElement('div')
+      dateYear.setAttribute('class', 'year');
+      dateYear.innerHTML = d.getFullYear();
+
+      date.appendChild(dateMonth);
+      date.appendChild(dateDay);
+      date.appendChild(dateYear);
+
+      heading.appendChild(date);
+      heading.appendChild(h2);
 
       var h2A = document.createElement('a')
       h2A.setAttribute('class', 'entry-heading');
